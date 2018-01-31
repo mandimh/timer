@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    
+    <!--  Bootstrap CSS  -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <!--  Local Stylesheet  -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body class="background1">
+    <h1 class="whiteText">Auto-Restarting Timer</h1>
+    <div class="container">
+        <!--   row for Countdown   -->
+        <div class="row justify-content-center">
+            <div class="col-9 background1middle" id="countdown">
+                <h2 class="whiteText">
+                    <span id="min"></span> Minutes
+                    <br>
+                    <span id="sec"></span> Seconds
+                </h2>
+            </div>
+            <!-- END column -->
+        </div>
+        <!-- END countdown row -->
+
+        <!--  row for Start and Stop/Reset Buttons   -->
+        <div class="row justify-content-center">
+            <div class="col" id=buttons>
+                <button class="btn" id="start">Start</button>
+                <button class="btn" id="reset">Stop/Reset</button>
+            </div>
+        </div>
+        <!-- END #buttons row -->
+
+        <!--   Row for User Input   -->
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="input-group userInput">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                        Set timer for
+                        </span>
+                    </div>                    
+                     <select class="form-control" name="userMin" id="userMin">
+                        <option value="5">5 min</option>
+                        <option value="0">0 min</option>
+                        <option value="1">1 min</option>
+                        <option value="2">2 min</option>
+                        <option value="3">3 min</option>
+                        <option value="4">4 min</option>
+                        <option value="5">5 min</option>
+                        <option value="6">6 min</option>
+                        <option value="7">7 min</option>
+                        <option value="8">8 min</option>
+                        <option value="9">9 min</option>
+                        <option value="10">10 min</option>
+                    </select>
+                    <select class="form-control" name="userSec" id="userSec">
+                        <option value="0">0 sec</option>
+                        <option value="15">15 sec</option>
+                        <option value="30">30 sec</option>
+                        <option value="45">45 sec</option>                       
+                    </select>
+                    
+<!--
+                    <span class="input-group-btn">      
+                        <button id="submit" class="btn btn-secondary" type="submit" data-toggle="button" aria-pressed="false">Submit</button>          
+                    </span>
+-->
+                </div>
+            </div>
+        </div>
+        <!--   END .input row    -->
+        
+    </div>
+    <!-- END .container -->
+    <!--  jQuery  -->
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<!--  $.playSound  -->
+    <script src='https://cdn.rawgit.com/admsev/jquery-play-sound/master/jquery.playSound.js'></script>
+    <!--  Bootstrap JS  -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+    <!--  Local JS  -->
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
