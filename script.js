@@ -13,7 +13,7 @@ $("button#submit").on("click", function () {
 $("button#reset").click(reset);
 $("button#start").click(secCountDown);
 
-function getValues(){
+function getValues() {
     min = $("#userMin").val();
     sec = $("#userSec").val();
 }
@@ -67,7 +67,7 @@ function secCountDown() {
         if (sec > 0 && min >= 0) {
             sec--;
             $("#sec").text(sec);
-        } else if(sec == 0 && min >= 0){
+        } else if (sec == 0 && min >= 0) {
             // if sec = 0, subtract 1 from min and restart sec to 59
             //getValues();
             sec = 59;
@@ -80,7 +80,7 @@ function secCountDown() {
                 $("#min").text(min);
                 $("#sec").text(sec);
                 toggleDisplayClasses();
-                $.playSound("/assets/Ship_Bell.mp3");
+                $.playSound("assets/Ship_Bell.mp3");
             }
         }
     }, 1000);
