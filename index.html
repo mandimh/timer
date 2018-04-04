@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timer</title>
-    
+
     <!--  Bootstrap CSS  -->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
     <!--  Local Stylesheet  -->
@@ -12,12 +13,12 @@
 
 </head>
 
-<body class="background1">
+<body>
     <h1 class="whiteText">Auto-Restarting Timer</h1>
     <div class="container">
         <!--   row for Countdown   -->
         <div class="row justify-content-center">
-            <div class="col-9 background1middle" id="countdown">
+            <div class="col-9" id="countdown">
                 <h2 class="whiteText">
                     <span id="min"></span> Minutes
                     <br>
@@ -45,8 +46,8 @@
                         <span class="input-group-text">
                         Set timer for
                         </span>
-                    </div>                    
-                     <select class="form-control" name="userMin" id="userMin">
+                    </div>
+                    <select class="form-control" name="userMin" id="userMin">
                         <option value="5">5 min</option>
                         <option value="0">0 min</option>
                         <option value="1">1 min</option>
@@ -64,31 +65,74 @@
                         <option value="0">0 sec</option>
                         <option value="15">15 sec</option>
                         <option value="30">30 sec</option>
-                        <option value="45">45 sec</option>                       
+                        <option value="45">45 sec</option>                     
                     </select>
-                    
-<!--
-                    <span class="input-group-btn">      
-                        <button id="submit" class="btn btn-secondary" type="submit" data-toggle="button" aria-pressed="false">Submit</button>          
-                    </span>
--->
                 </div>
             </div>
         </div>
         <!--   END .input row    -->
-        
+        <!--   Row to choose colors     -->
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="input-group userInput">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                        Color Display
+                        </span>
+                    </div>
+                    <select class="form-control" name="colorDisplay" id="colorDisplay">
+                        <option value="blackWhite">Black &amp; White</option> 
+                        <option value="purpleGreen">Purple &amp; Green</option>
+                        <option value="redBlue">Red &amp; Blue</option> 
+                        <option value="pinkTeal">Pink &amp; Teal</option> 
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!--    END row to choose colors    -->
+        <!--   Row to choose sound     -->
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="input-group userInput">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                        Bell Sound
+                        </span>
+                    </div>
+                    <select class="form-control" name="sound" id="sound">
+                        <option value="shipBell">Ship Bell</option>
+                        <option value="boxingBell">Boxing Bell</option> 
+                        <option value="deskBell">Desk Bell</option> 
+                        <option value="handBell">Hand Bell</option> 
+                        <option value="templeBell">Temple Bell</option> 
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!--    END row to choose colors    -->
     </div>
     <!-- END .container -->
+    <audio id="shipBell" data-key="0">
+        <source src="assets/Ship_Bell.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="boxingBell" data-key="1">
+        <source src="assets/boxing-bell.wav">
+    </audio>
+    <audio id="deskBell" data-key="2">
+        <source src="assets/reception-bell.flac">
+    </audio>
+    <audio id="handBell" data-key="3">
+        <source src="assets/hand-bells-d.wav">
+    </audio>
+    <audio id="templeBell" data-key="4">
+        <source src="assets/daitokuji-temple.wav">
+    </audio>
     <!--  jQuery  -->
-    <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-<!--  $.playSound  -->
-    <script src='https://cdn.rawgit.com/admsev/jquery-play-sound/master/jquery.playSound.js'></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <!--  Bootstrap JS  -->
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
     <!--  Local JS  -->
     <script type="text/javascript" src="script.js"></script>
 </body>
+
 </html>

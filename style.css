@@ -1,59 +1,36 @@
-.background1middle {
-  background: #8A458A;
-}
-
-.background2middle {
-  background: #BCCE66;
-}
-
-.background1 {
-  background: #6F256F;
-}
-
-.background2 {
-  background: #91A437;
-}
-
-
-.blackText {
-  color: black:
-}
-
-.whiteText{
-  color: white;
+body {
+    background: #444;
+    height: 100%;
 }
 
 input {
-  display: inline-block;
-  width: 25px;
+    display: inline-block;
+    width: 25px;
 }
 
 h1 {
-  text-align: center;
-  font-size: 4.5em;
+    text-align: center;
+    font-size: 3.5em;
+    padding: 10px;
+    color: white;
 }
 
 h2 {
-  font-size: 3em;
-  text-align: center;
-  padding: 75px;
+    font-size: 3em;
+    text-align: center;
+    padding: 75px;
+    background: white;
+    color: black;
 }
 
 h2 span {
-  display: inline-block;
-  width: 30%;
-  height: 90px;
-  font-size: 2em;
+    display: inline-block;
+    width: 30%;
+    height: 90px;
+    font-size: 2em;
 }
 
 div#buttons {
-/*   margin: 0 auto; */
-  text-align: center;
-  padding: 0 0 25px;
+    text-align: center;
+    padding: 0 0 25px;
 }
-
-/* div.userInput {
-  margin: 0 center;
-  text-align: center;
-  padding: 5px;
-} */

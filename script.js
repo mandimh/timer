@@ -2,20 +2,68 @@ var min;
 var sec;
 var minTimer;
 var secTimer;
-
-
-$("button#submit").on("click", function () {
-    getValues();
-    console.log(min);
-    console.log(sec);
-});
+var colors;
+var sound;
+var firstTime = true;
+var audio;
 
 $("button#reset").click(reset);
-$("button#start").click(secCountDown);
+$("button#start").click(startCountDown);
+
+var colorSets = [
+    {
+        id: "purpleGreen",
+        background1: "purple",
+        text1: "#fff",
+        background2: "green",
+        text2: "#000"
+    },
+    {
+        id: "blackWhite",
+        background1: "#fff",
+        text1: "#000",
+        background2: "#000",
+        text2: "#fff"
+    },
+    {
+        id: "redBlue",
+        background1: "red",
+        text1: "#000",
+        background2: "blue",
+        text2: "#fff"
+    },
+    {
+        id: "pinkTeal",
+        background1: "pink",
+        text1: "#000",
+        background2: "teal",
+        text2: "#fff"
+    }
+]
 
 function getValues() {
     min = $("#userMin").val();
     sec = $("#userSec").val();
+    colors = $("#colorDisplay").val();
+    assignColors();
+    sound = $("#sound").val();
+    audio = document.getElementById(sound);
+}
+
+function assignColors() {
+    colorSets.forEach(function (color) {
+        if (color.id == colors) {
+            if (firstTime === true) {
+                $("h2").css("background-color", color.background1);
+                $("h2").css("color", color.text1);
+                firstTime = false;
+            } else {
+                $("h2").css("background-color", color.background2);
+                $("h2").css("color", color.text2);
+                firstTime = true;
+            }
+        }
+    });
 }
 
 function disableStart() {
@@ -32,30 +80,11 @@ function reset() {
     getValues();
     $("#min").text(min);
     $("#sec").text(sec);
-    toggleDisplayClasses();
+    assignColors();
 }
-
-function toggleDisplayClasses() {
-    $("#countdown").toggleClass("background2middle");
-    $("#countdown").toggleClass("background1middle");
-    $("h1").toggleClass("whiteText");
-    $("h1").toggleClass("blackText");
-    $("h2").toggleClass("whiteText");
-    $("h2").toggleClass("blackText");
-    $("body").toggleClass("background1");
-    $("body").toggleClass("background2");
-}
-
-//function restart() {
-//    stop();
-//    getValues();
-//    $("#min").text(min);
-//    $("#sec").text(sec);
-//    toggleDisplayClasses();
-//}
 
 //runs when you click "start"
-function secCountDown() {
+function startCountDown() {
     disableStart();
     getValues();
     //display starting number
@@ -69,7 +98,6 @@ function secCountDown() {
             $("#sec").text(sec);
         } else if (sec == 0 && min >= 0) {
             // if sec = 0, subtract 1 from min and restart sec to 59
-            //getValues();
             sec = 59;
             $("#sec").text(sec);
             if (min > 0) {
@@ -79,8 +107,7 @@ function secCountDown() {
                 getValues();
                 $("#min").text(min);
                 $("#sec").text(sec);
-                toggleDisplayClasses();
-                $.playSound("assets/Ship_Bell.mp3");
+                audio.play();
             }
         }
     }, 1000);
